@@ -56,3 +56,9 @@ maze_solver/
 │   └── main.js
 └── README.md
 ```
+## Screenshots
+<img width="2336" height="1282" alt="Ekran Resmi 2026-05-04 17 08 19" src="https://github.com/user-attachments/assets/ffa8fe4b-d063-4379-809e-8e368934a6c3" />
+<img width="2330" height="1278" alt="Ekran Resmi 2026-05-04 17 07 24" src="https://github.com/user-attachments/assets/7afb4107-c830-4e51-84d8-6cd1741022fa" />
+<img width="2332" height="1280" alt="Ekran Resmi 2026-05-04 17 07 02" src="https://github.com/user-attachments/assets/6a16a47a-1571-43c0-b993-6ee6465d9721" />
+<img width="2324" height="1282" alt="Ekran Resmi 2026-05-04 17 06 43" src="https://github.com/user-attachments/assets/4e74b4ab-b3a5-4759-9d78-1468681b5d45" />
+<img width="2328" height="1274" alt="Ekran Resmi 2026-05-04 17 06 26" src="https://github.com/user-attachments/assets/67886fa3-b8cc-4488-9282-807413a94bf9" />
