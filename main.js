@@ -367,6 +367,49 @@
 
     window.addEventListener("keydown", handleKeyMovement);
     window.addEventListener("resize", renderMaze);
+    // D-pad button controls for mobile
+var dpadMap = {
+  dpadUp: "ArrowUp",
+  dpadDown: "ArrowDown",
+  dpadLeft: "ArrowLeft",
+  dpadRight: "ArrowRight",
+};
+
+Object.keys(dpadMap).forEach(function (id) {
+  var btn = document.getElementById(id);
+  if (btn) {
+    btn.addEventListener("click", function () {
+      handleKeyMovement({ key: dpadMap[id], preventDefault: function () {} });
+    });
+  }
+});
+
+// Swipe gesture support for mobile
+var touchStartX = 0;
+var touchStartY = 0;
+
+document.addEventListener("touchstart", function (e) {
+  touchStartX = e.changedTouches[0].clientX;
+  touchStartY = e.changedTouches[0].clientY;
+}, { passive: true });
+
+document.addEventListener("touchend", function (e) {
+  var dx = e.changedTouches[0].clientX - touchStartX;
+  var dy = e.changedTouches[0].clientY - touchStartY;
+  var absDx = Math.abs(dx);
+  var absDy = Math.abs(dy);
+
+  if (Math.max(absDx, absDy) < 30) return; // too short, ignore
+
+  var swipeKey;
+  if (absDx > absDy) {
+    swipeKey = dx > 0 ? "ArrowRight" : "ArrowLeft";
+  } else {
+    swipeKey = dy > 0 ? "ArrowDown" : "ArrowUp";
+  }
+
+  handleKeyMovement({ key: swipeKey, preventDefault: function () {} });
+}, { passive: true });
   }
 
   // Initializes all modules and starts the first game instance.
