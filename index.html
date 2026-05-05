@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Maze Solver Game</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&family=Share+Tech+Mono&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="control-panel" aria-label="Game controls">
+        <h1>Maze Solver Game</h1>
+        <p class="subtitle">IBU Final Project Esmanur Yaman · Introduction to Programming</p>
+
+        <div class="stats-grid">
+          <div class="stat-card">
+            <span class="stat-label">Moves</span>
+            <span id="moveCounter" class="stat-value">0</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-label">Time</span>
+            <span id="timer" class="stat-value">00:00</span>
+          </div>
+        </div>
+
+        <div class="control-group">
+          <label for="difficultySelect">Difficulty</label>
+          <select id="difficultySelect" aria-label="Select maze difficulty">
+            <option value="easy">Easy (11x11)</option>
+            <option value="medium">Medium (15x15)</option>
+            <option value="hard">Hard (21x21)</option>
+          </select>
+        </div>
+
+        <div class="button-row">
+          <button id="restartBtn" type="button">Restart</button>
+          <button id="solveBtn" type="button">Solve</button>
+          <button id="newMazeBtn" type="button">New Maze</button>
+        </div>
+
+        <p class="hint">Use arrow keys (Up, Down, Left, Right) to move from START to END.</p>
+      </section>
+
+      <section class="board-panel" aria-label="Maze board section">
+        <div id="maze" class="maze-grid" aria-label="Maze board"></div>
+      </section>
+    </main>
+
+    <div id="winOverlay" class="win-overlay hidden" role="dialog" aria-modal="true">
+      <div class="overlay-card">
+        <h2>Congratulations!</h2>
+        <p>You solved the maze.</p>
+        <p id="winStats" class="win-stats"></p>
+        <button id="overlayRestartBtn" type="button">Play Again</button>
+      </div>
+    </div>
+
+    <script src="maze.js"></script>
+    <script src="player.js"></script>
+    <script src="solver.js"></script>
+    <script src="main.js"></script>
+  </body>
+</html>
